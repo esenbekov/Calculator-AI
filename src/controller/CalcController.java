@@ -4,10 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.RowConstraints;
 import java.lang.StringBuilder;
 
 /**
@@ -49,7 +46,6 @@ public class CalcController {
     public void initialize()
     {
         setActionListeners();
-        //calcGrowth();
     }
 
     //Action event listeners
@@ -498,25 +494,5 @@ public class CalcController {
         });
     }
 
-
-    public void calcGrowth()
-    {
-        int numRows = 6;
-        int numColumns = 4;
-        for (int rowIndex = 0; rowIndex < numRows; rowIndex++) {
-            RowConstraints rc = new RowConstraints();
-            rc.setVgrow(Priority.ALWAYS) ; // allow row to grow
-            rc.setFillHeight(true); // ask nodes to fill height for row
-            // other settings as needed...
-            grid.getRowConstraints().add(rc);
-        }
-        for (int colIndex = 0; colIndex < numColumns; colIndex++) {
-            ColumnConstraints cc = new ColumnConstraints();
-            cc.setHgrow(Priority.ALWAYS) ; // allow column to grow
-            cc.setFillWidth(true); // ask nodes to fill space for column
-            // other settings as needed...
-            grid.getColumnConstraints().add(cc);
-        }
-    }
 }
 
